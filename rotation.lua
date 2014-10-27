@@ -1,8 +1,22 @@
 --Schattig by eiii, credits to whoever deserves them, 
 --specially phelps for fixing Insanity
---version 0.0.8
-ProbablyEngine.rotation.register_custom(258, "Schattig 0.0.8 by eiii~", {
- 	-- Cooldowns
+--version 0.1.0
+ProbablyEngine.rotation.register_custom(258, "Schattig 0.1.0 by eiii~", {
+   
+    -- Rotation
+	{ "589", { "target.debuff(589).duration <= 3", "player.shadoworbs >= 2" }, -- SW:P
+	{ "34914", { "target.debuff(34914).duration <= 3.5", "!modifier.last", "!player.buff(132573)", "player.shadoworbs >= 2" }}, -- Vampiric Touch
+    { "8092" }, -- Mind Blast 
+	{ "8092", "player.buff(162452)" }, --Mind Blast with Shadowy Insight
+    { "2944", "player.shadoworbs = 3" }, -- Devouring Plague with 3 Orbs Up (for now)
+    { "73510", "player.buff(162448)" }, -- Mind Spike with Procc
+    { "32379", "target.health <= 20" }, -- SW:D under 20%
+    { "32379", "target.debuff(32379).duration <= 3" }, -- wat
+	{ "15407" }, --Mind Flay as filler
+    { "129197", "player.buff(132573)" }, --Insanity with Procc Up
+	{ "15286", "player.health <= 75" }, -- Vampiric Embrace
+	
+	-- Cooldowns
     { "10060", "modifier.cooldowns" }, -- Power Infusion
     { "34433", "modifier.cooldowns" }, -- Shadowfiend
     
@@ -18,21 +32,8 @@ ProbablyEngine.rotation.register_custom(258, "Schattig 0.0.8 by eiii~", {
     { "127632", { "player.moving", "modifier.multitarget" }}, -- Cascade when Moving...
     { "120644", { "player.moving", "modifier.multitarget" }}, --Halo when Moving
 	{ "122121", { "player.moving", "modifier.multitarget" }}, --Divine Star when Moving
-	{ "589", { "player.moving", "target.debuff(589).duration <= 3" } }, -- SW:Pain when Moving
+	{ "589", "player.moving" }, -- SW:Pain when Moving
 	{ "32379", { "player.moving", "target.health <= 20" }}, -- SW:D when Health under 20 Percent and Moving
-    
-    -- Rotation
-    { "8092" }, -- Mind Blast 
-	{ "8092", "player.buff(162452)" }, --Mind Blast with Shadowy Insight
-    { "2944", "player.shadoworbs = 3" }, -- Devouring Plague with 3 Orbs Up (for now)
-    { "73510", "player.buff(162448)" }, -- Mind Spike with Procc
-    { "32379", "target.health <= 20" }, -- SW:D under 20%
-	{ "589", "target.debuff(589).duration <= 3" }, -- SW:P
-    { "32379", "target.debuff(32379).duration <= 3" }, -- wat
-    { "34914", { "target.debuff(34914).duration <= 3", "!modifier.last", "!player.buff(132573)" }}, -- Vampiric Touch
-	{ "15407" }, --Mind Flay as filler
-    { "129197", "player.buff(132573)" }, --Insanity with Procc Up
-	{ "15286", "player.health <= 75" }, -- Vampiric Embrace
 	
 	--Utility
 	{ "/script TargetNearestEnemy()", { "toggle.autotarget", "!target.exists" } },
