@@ -49,7 +49,7 @@ ProbablyEngine.rotation.register_custom(258, "Schattig 0.1.1 by eiii~", {
 { 
 	--Forms 'n Buffs
 	
-	{ "2061", "player.health <= 95" },
+	{ "25162", "!player.buff(25162)" },
 	{ "589", "tank.combat", "target" }, -- ty to MRTSZ, didn't know about "tank.combat"
 	{ "25162", { "!lowest.buff(25162).any", "lowest.range <= 30" }}, --PW:F
     { "15473", "!player.buff(15473)" }, -- Shadowform)
