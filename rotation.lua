@@ -1,7 +1,6 @@
 --Schattig by eiii, credits to whoever deserves them, 
 --specially phelps for fixing Insanity
---version 0.1.1
-ProbablyEngine.rotation.register_custom(258, "Schattig 0.1.1 by eiii~", {
+ProbablyEngine.rotation.register_custom(258, "Schattig 0.1.1a by eiii~", {
    
     -- Rotation
 	{ "589", "target.debuff(589).duration <= 3" }, -- SW:P
@@ -35,11 +34,13 @@ ProbablyEngine.rotation.register_custom(258, "Schattig 0.1.1 by eiii~", {
 	{ "589", "player.moving" }, -- SW:Pain when Moving
 	{ "32379", { "player.moving", "target.health <= 20" }}, -- SW:D when Health under 20 Percent and Moving
 	
-	--Utility
+	--Utility and Interrupts
+    { "15487", "modifier.interrupts" }, -- Silence
 	{ "/script TargetNearestEnemy()", { "toggle.autotarget", "!target.exists" } },
 	{ "/script TargetNearestEnemy()", { "toggle.autotarget", "target.exists", "target.dead" } },
 	
 	--Defensive/Heal
+	{ "#5512", "player.health < 35"}, -- Healthstone
 	{ "17", {"player.health <= 55", "toggle.heal"}}, -- PW:Shield 
 	{ "47585", {"player.health <= 10", "toggle.heal"}}, -- Dispersion when shit is getting tricky
 	{ "2061", {"player.health <= 20", "toggle.heal"}}, -- Flash Heal 
