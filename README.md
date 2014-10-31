@@ -26,3 +26,6 @@ DoT Uptime should be improved now
 
 0.1.1
 DoT Uptime REALLY should be improved now
+
+0.1.4
+Feather while Moving InCombat added, faster MB with Shadowy Insight cast (instant) for faster Orbs
