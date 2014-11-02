@@ -1,6 +1,6 @@
 --Schattig by eiii, credits to whoever deserves them, 
 --specially phelps for fixing Insanity
-ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.1a by eiii~", {
+ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.5 by eiii~", {
    
 	--Feather InCombat
 	{ "!121536", {"player.moving", "toggle.feather", "!player.buff(121557)", "player.spell(121536).charges >= 1" }, "player.ground" }, --Feather
@@ -58,6 +58,8 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.1a by eii
 	{ "21562", {"!player.buff(21562).any","!player.buff(588)"}}, -- PW:F
     { "15473", "!player.buff(15473)" }, -- Shadowform)
 	{ "121536", {"player.movingfor > 2", "toggle.feather", "!player.buff(121557)", "player.spell(121536).charges >= 1" }, "player.ground" }, --Feather
+	{ "33076", { "player.buff(41635).duration <= 3", "toggle.heal"} },
+	{ "17", "!player.debuff(6788)" },
 	
 },
 function()
