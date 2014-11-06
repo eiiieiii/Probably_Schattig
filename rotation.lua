@@ -1,6 +1,11 @@
 --Schattig by eiii~
 --version 0.2.0
-ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.5 by eiii~", {
+ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.2.1 by eiii~", {
+ -- Cooldowns
+		{ "10060", "modifier.cooldowns" }, -- Power Infusion
+		{ "34433", "modifier.cooldowns" }, -- Shadowfiend
+    
+ 
  -- [[ EXPERIMENTAL MULTIDOTTING ]] --
 	{{
 		-- SW:P
@@ -9,7 +14,7 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.5 by eiii
 		
 		-- Vampiric Touch
 		{"34194", {"!mouseover.debuff(34194)", "!player.casting(48181)", "!player.moving"}, "mouseover"},
-		{"34194", {"mouseover.debuff(589).duration < 5", "!player.casting(15407)", "!player.casting(129197)","!player.casting(34914)", "!player.casting(8092)", "!player.moving" }, "mouseover"},
+		{"34194", {"mouseover.debuff(34194).duration < 5", "!player.casting(15407)", "!player.casting(129197)", "!player.casting(8092)" }, "mouseover"},
 		
 	}, "modifier.lshift", "modifier.multitarget", },
 
@@ -36,11 +41,6 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.5 by eiii
 		{ "8092" }, -- Mind Blast 
 		{ "15407" }, --Mind Flay as filler
 	
-	-- Cooldowns
-		{ "10060", "modifier.cooldowns" }, -- Power Infusion
-		{ "34433", "modifier.cooldowns" }, -- Shadowfiend
-    
-
 	
     -- Moving Around
 		{ "121536", {"player.moving", "toggle.feather", "!player.buff(121557)", "player.spell(121536).charges >= 1" }, "player.ground" },
@@ -66,7 +66,7 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.1.5 by eiii
 -- [[ OOC ]] --
 { 
 	--Forms 'n Buffs
-		{ "25162", "!player.buff(25162)" }, -- PW:Fortidute
+		{ "25162", "!player.buffs.stamina" }, -- PW:Fortidute
 		{ "589", "player.moving", "tank.combat", "target" }, -- Engage when Tank in Combat with SW:P while Moving
 		{ "34914", "!player.moving", "tank.combat", "target" }, -- Engage when Tank in Combat with VT whilst not Moving
 		{ "15473", "!player.buff(15473)" }, -- Shadowform
