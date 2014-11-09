@@ -1,10 +1,17 @@
 --Schattig by eiii~
 --version 0.2.0
-ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.2.1 by eiii~", {
+ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.2.3 by eiii~", {
  -- Cooldowns
+
 		{ "10060", "modifier.cooldowns" }, -- Power Infusion
 		{ "34433", "modifier.cooldowns" }, -- Shadowfiend
-    
+		{ "15286"}, { "toggle.embrace", "player.health <= 75" }, --VE < 75% hp
+
+			--Defensive/Heal
+		{ "#5512", "player.health < 35"}, -- Healthstone
+		{ "17", {"player.health <= 55", "toggle.heal", }}, -- PW:Shield 
+		{ "47585", {"player.health <= 10", "toggle.heal"}}, -- Dispersion when shit is getting tricky
+		{ "2061", {"player.health <= 20", "toggle.heal"}}, -- Flash Heal 
  
  -- [[ EXPERIMENTAL MULTIDOTTING ]] --
 	{{
@@ -36,7 +43,7 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.2.1 by eiii
 		{ "!2944", "player.shadoworbs = 3" }, -- Devouring Plague with 3 Orbs Up (for now)
 		{ "73510", "player.buff(162448)" }, -- Mind Spike with Procc
 		{ "32379", "target.health <= 20" }, -- SW:D under 20%
-		{ "32379", {"target.debuff(32379).duration <= 3", "!player.buff(132573" }}, -- wat
+		{ "32379", {"target.debuff(32379).duration <= 3", "!player.buff(132573)" }}, -- wat
 		{ "129197", "player.buff(132573)" }, --Insanity with Procc Up
 		{ "8092" }, -- Mind Blast 
 		{ "15407" }, --Mind Flay as filler
@@ -51,16 +58,10 @@ ProbablyEngine.rotation.register_custom(258, "|cff9482C9Schattig|r 0.2.1 by eiii
 		{ "589", "player.moving" }, -- SW:Pain when Moving
 		{ "32379", { "player.moving", "target.health <= 20" }}, -- SW:D when Health under 20 Percent and Moving
 	
-	--Defensive/Heal
-		{ "#5512", "player.health < 35"}, -- Healthstone
-		{ "17", {"player.health <= 55", "toggle.heal"}}, -- PW:Shield 
-		{ "47585", {"player.health <= 10", "toggle.heal"}}, -- Dispersion when shit is getting tricky
-		{ "2061", {"player.health <= 20", "toggle.heal"}}, -- Flash Heal 
-	
 	--Utility and Interrupts
 		{ "15487", "modifier.interrupts" }, -- Silence
-		{ "/script TargetNearestEnemy()", { "toggle.autotarget", "!target.exists" } },
-		{ "/script TargetNearestEnemy()", { "toggle.autotarget", "target.exists", "target.dead" } },
+		{ "/script TargetNearestEnemy()", { "toggle.autotar", "!target.exists" } },
+		{ "/script TargetNearestEnemy()", { "toggle.autotar", "target.exists", "target.dead" } },
 	
 },
 -- [[ OOC ]] --
@@ -79,6 +80,6 @@ function()
 	ProbablyEngine.toggle.create( 'embrace', 'Interface\\Icons\\spell_shadow_improvedvampiricembrace', "Vampiric Embrace", "Vampiric Embrace, <= 75% health")
 	ProbablyEngine.toggle.create( 'feather', 'Interface\\Icons\\Ability_priest_angelicfeather', "Guess what", "Feather, if chosen, if not, l2p")
 	ProbablyEngine.toggle.create('autotar', 'Interface\\Icons\\ability_hunter_markedfordeath', 'Auto Target', 'Too lazy to cycle trough mobs')
-	ProbablyEngine.toggle.create('heal', 'Interface\\Icons\\ability_paladin_selflesshealer', 'Heal OOC', 'Healing between Fights, for Questing/Grinding')
+	ProbablyEngine.toggle.create('heal', 'Interface\\Icons\\ability_paladin_selflesshealer', 'Selfheal', 'Healing for Questing/Grinding')
 end
 )
