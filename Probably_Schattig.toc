@@ -1,6 +1,10 @@
 ## Interface: 60000
-## Title: Probably - Schattig
+## Title: Probably - |cff9482C9Schattig|r
 ## Notes: ProbablyEngine Custom Rotation
 ## Dependencies: Probably
 
-rotation.lua
+rota\shadow.lua
+libs\library.lua
+libs\interface.lua
+libs\displayframe.lua
+texture\schatt.blp
