@@ -1,5 +1,9 @@
 ## Interface: 60000
+<<<<<<< HEAD
 ## Title: Probably - |cff9482C9Schattig|r
+=======
+## Title: Probably - [|cff9482C9Schattig|r by eiii]
+>>>>>>> origin/master
 ## Notes: ProbablyEngine Custom Rotation
 ## Dependencies: Probably
 
