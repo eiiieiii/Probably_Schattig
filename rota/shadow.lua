@@ -15,7 +15,7 @@ end
 -- [[ooC Rotation]] --
 local beforeCombat = {
 	--Forms 'n Buffs
-		{ "21562", {"!player.buff.stamina"}}
+		{ "21562", {"!player.buff.stamina", "modifier.last"}},
 		{ "!15473", "!player.buff(15473)" }, -- Shadowform
 		{ "25162", "!player.buff(25162)"},
 		{ "1706",{ "player.falling >= 2", "!modifier.last", 
