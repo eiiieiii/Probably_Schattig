@@ -15,6 +15,7 @@ end
 -- [[ooC Rotation]] --
 local beforeCombat = {
 	--Forms 'n Buffs
+		{ "21562", {"!player.buff.stamina"}}
 		{ "!15473", "!player.buff(15473)" }, -- Shadowform
 		{ "25162", "!player.buff(25162)"},
 		{ "1706",{ "player.falling >= 2", "!modifier.last", 
@@ -84,7 +85,7 @@ local combatRotation = {
 	
 	-- [[ Rotation ]] -- 
 	--Feather InCombat
-		{ "!121536", {"player.moving", "!player.buff(121557)", "player.spell(121536).charges >= 1" , "talent(2, 2)",
+		{{ "!121536", {"player.moving", "!player.buff(121557)", "player.spell(121536).charges >= 1" , "talent(2, 2)",
 			(function() return fetch('schattigConfig', 'feather') end)}}, "player.ground"},
 		{ "!17", {"talent(2, 1)", "player.moving", "!player.buff(6788)", 
 			(function() return fetch('schattigConfig', 'feather') end)}},
