@@ -30,6 +30,7 @@ local beforeCombat = {
 }
 -- [[Combat Rotation]] --
 local combatRotation = {
+	{ "21562", {"!player.buff.stamina", "modifier.last"}},
 	{ "!15473", "!player.buff(15473)" }, -- Shadowform
  	{{
 		{"/targetenemy [noexists]", "!target.exists"},
