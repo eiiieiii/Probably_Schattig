@@ -35,11 +35,12 @@ local combatRotation = {
 		{"/targetenemy [dead]", {"target.exists", "target.dead"}},
 	}, (function() return fetch('schattigConfig', 'auto_target') end)},
 
+	{ "#5512", 
+	(function() return dynamicEval("player.health <= " .. fetch('schattigConfig', 'hstone')) end)}, -- Healthstone
+
  	-- Cooldowns
-		{ "#5512", 
-			(function() return dynamicEval("player.health <= " .. fetch('schattigConfig', 'hstone')) end)}, -- Healthstone
 		{ "123040", "talent(3, 2)"}, -- Mindbender on CD if chosen
- 		{ "10060", {"talent(5, 2)", "modifier.cooldowns" }, -- Power Infusion
+ 		{ "10060", {"talent(5, 2)", "modifier.cooldowns" }}, -- Power Infusion
 		{ "34433", "modifier.cooldowns" }, -- Shadowfiend
 		{ "15286", {
 			(function() return dynamicEval("player.health <= " .. fetch('schattigConfig', 've_health')) end), 
